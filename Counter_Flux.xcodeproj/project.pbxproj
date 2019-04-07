@@ -25,7 +25,6 @@
 		DF5C07F0221E5116002A212B /* ActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C07EF221E5116002A212B /* ActionCreator.swift */; };
 		DF5C07F2221E659B002A212B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C07F1221E659B002A212B /* Store.swift */; };
 		DF5C07F4221E65CF002A212B /* CountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C07F3221E65CF002A212B /* CountStore.swift */; };
-		DF5C07F7221E6692002A212B /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C07F6221E6692002A212B /* Count.swift */; };
 		DF5C07F9221E7349002A212B /* CountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C07F8221E7349002A212B /* CountViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		DF5C07EF221E5116002A212B /* ActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCreator.swift; sourceTree = "<group>"; };
 		DF5C07F1221E659B002A212B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DF5C07F3221E65CF002A212B /* CountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStore.swift; sourceTree = "<group>"; };
-		DF5C07F6221E6692002A212B /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		DF5C07F8221E7349002A212B /* CountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewModel.swift; sourceTree = "<group>"; };
 		E0CD40A20F8589B22D4315CA /* Pods_Counter_FluxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Counter_FluxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,7 +212,6 @@
 		DF5C07F5221E6682002A212B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DF5C07F6221E6692002A212B /* Count.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,7 +450,6 @@
 				DF5C07A6221405F2002A212B /* Dispatcher.swift in Sources */,
 				DF274DBC2259EAD500A3831B /* Injectable.swift in Sources */,
 				DF5C07F2221E659B002A212B /* Store.swift in Sources */,
-				DF5C07F7221E6692002A212B /* Count.swift in Sources */,
 				DF5C07A422140532002A212B /* SampleAction.swift in Sources */,
 				DF5C07F0221E5116002A212B /* ActionCreator.swift in Sources */,
 				DF5C077422140366002A212B /* AppDelegate.swift in Sources */,
