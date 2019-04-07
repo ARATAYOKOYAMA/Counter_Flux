@@ -10,6 +10,7 @@
 		10C82CE560C95EB07726CA0E /* Pods_Counter_FluxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CD40A20F8589B22D4315CA /* Pods_Counter_FluxUITests.framework */; };
 		309053F31D6BF3FA0F64BB79 /* Pods_Counter_Flux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210C361A12524A4F46B53B72 /* Pods_Counter_Flux.framework */; };
 		521A8E4FC6120EF94CBDF771 /* Pods_Counter_FluxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BD90DD224516577F17FDBE /* Pods_Counter_FluxTests.framework */; };
+		DF274DBC2259EAD500A3831B /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF274DBB2259EAD500A3831B /* Injectable.swift */; };
 		DF5C077422140366002A212B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C077322140366002A212B /* AppDelegate.swift */; };
 		DF5C077622140366002A212B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C077522140366002A212B /* ViewController.swift */; };
 		DF5C077922140366002A212B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5C077722140366002A212B /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		A6B2990689A81D53BC3B7E2C /* Pods-Counter_FluxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Counter_FluxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Counter_FluxUITests/Pods-Counter_FluxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D838E231F7C0CE98A35D1FED /* Pods-Counter_FluxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Counter_FluxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Counter_FluxUITests/Pods-Counter_FluxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DB800DDC5FBB3BA3FC1A311C /* Pods-Counter_FluxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Counter_FluxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Counter_FluxTests/Pods-Counter_FluxTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF274DBB2259EAD500A3831B /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
 		DF5C077022140366002A212B /* Counter_Flux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counter_Flux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5C077322140366002A212B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF5C077522140366002A212B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DF5C077A22140367002A212B /* Assets.xcassets */,
 				DF5C077C22140367002A212B /* LaunchScreen.storyboard */,
 				DF5C077F22140367002A212B /* Info.plist */,
+				DF274DBB2259EAD500A3831B /* Injectable.swift */,
 			);
 			path = Counter_Flux;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				DF5C07F4221E65CF002A212B /* CountStore.swift in Sources */,
 				DF5C07EE221E4FCC002A212B /* Action.swift in Sources */,
 				DF5C07A6221405F2002A212B /* Dispatcher.swift in Sources */,
+				DF274DBC2259EAD500A3831B /* Injectable.swift in Sources */,
 				DF5C07F2221E659B002A212B /* Store.swift in Sources */,
 				DF5C07F7221E6692002A212B /* Count.swift in Sources */,
 				DF5C07A422140532002A212B /* SampleAction.swift in Sources */,

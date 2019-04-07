@@ -12,53 +12,63 @@ import RxCocoa
 
 final class CountViewModel {
     
-    struct Dependency {
-        let countStore: CountStore
-        let actionCreator: CountActionCreator
+    enum type {
+        case up
+        case down
     }
+    
+    private let _plussButtonDidTapStream = PublishSubject<Void>()
+    private let _minusButtonDidTapStream = PublishSubject<Void>()
+    private let _count = BehaviorRelay<Int>(value: 0)
     
     private let disposeBag = DisposeBag()
     
-    private let viewWillAppearStream = PublishSubject<Void>()
-    private let plussButtonDidTapStream = PublishSubject<Void>()
-    private let minusButtonDidTapStream = PublishSubject<Void>()
+    private var countStore: CountStore
+    private var countActionCreator: CountActionCreator
     
-    var viewWillAppear: AnyObserver<()> {
-        return viewWillAppearStream.asObserver()
+    init(with actionCreator: CountActionCreator = .shared, store: CountStore = .shared) {
+        countActionCreator = actionCreator
+        countStore = store
+        
+        _plussButtonDidTapStream.subscribe({ [weak self] _ in
+            self?.count(type: .up)
+        })
+        .disposed(by: disposeBag)
+        
+        _minusButtonDidTapStream.subscribe({ [weak self] _ in
+            self?.count(type: .down)
+        })
+        .disposed(by: disposeBag)
+        
+        countStore.count
+            .bind(to: _count)
+            .disposed(by: disposeBag)
     }
     
+    private func count(type: type) {
+        switch type {
+        case .up:
+            countActionCreator.countUP(count: _count.value)
+        case .down:
+            countActionCreator.countDown(count: _count.value)
+        }
+    }
+}
+
+// Input
+extension CountViewModel {
     var plussButtonDidTap: AnyObserver<()> {
-        return plussButtonDidTapStream.asObserver()
+        return _plussButtonDidTapStream.asObserver()
     }
     
     var minusButtonDidTap: AnyObserver<()> {
-        return minusButtonDidTapStream.asObserver()
+        return _minusButtonDidTapStream.asObserver()
     }
-    
-    private let countStore: CountStore
-    private let countActionCreator: CountActionCreator
-    
-    init(with dependency: Dependency) {
-        
-        CountActionCreator = dependency.actionCreator
-        
-        
-//        viewWillAppearStream
-//            .flatMapLatest { _ -> Observable<Int> in
-//                return model.fetchCount()
-//            }
-//            .bind(to: countStream)
-//            .disposed(by: disposeBag)
-//
-//        plussButtonDidTapStream.subscribe(onNext: { [] in
-//            model.countUp()
-//        })
-//            .disposed(by: disposeBag)
-//
-//        minusButtonDidTapStream.subscribe(onNext: { [] in
-//            model.countDown()
-//        })
-//            .disposed(by: disposeBag)
-        
+}
+
+// Output
+extension CountViewModel {
+    var count: Observable<Int> {
+        return _count.asObservable()
     }
 }

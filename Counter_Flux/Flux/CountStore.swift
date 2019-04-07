@@ -12,38 +12,27 @@ import RxCocoa
 
 final class CountStore: Store {
     
+    static let shared = CountStore()
+    
     private let disposeBag = DisposeBag()
-    private let CountStream = PublishRelay<Count>()
+    // MARK: Output
+    var count: Observable<Int> {
+        return _countStream.asObservable()
+    }
+    private let _countStream = BehaviorRelay<Int>(value: 0)
     
     init(with dispatcher: Dispatcher = .shared) {
         
         dispatcher.register(handler: { [weak self] (action: CountAction) in
             guard let `self` = self else { return }
-            
             switch action {
-            case .plussButtonDidtap:
-                self.countUP()
-            case .minusButtonDidtap:
-                self.countDown()
-            case .fetchCount:
-                print("fetch")
+            case .plussButtonDidtap(let count):
+                self._countStream.accept(count)
+            case .minusButtonDidtap(let count):
+                self._countStream.accept(count)
             }
             
         }).disposed(by: disposeBag)
-    }
-    
-    // MARK: Output
-    var count: Observable<Count> {
-        return CountStream.asObservable()
-    }
-    
-    // MARK: Input
-    private func countUP() {
-        
-    }
-
-    private func countDown() {
-        
     }
     
 }

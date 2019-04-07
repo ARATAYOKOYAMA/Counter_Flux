@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class CountActionCreator {
+final class CountActionCreator: ActionCreator {
     
     static let shared = CountActionCreator()
     
@@ -22,15 +22,12 @@ final class CountActionCreator {
         self.dispatcher = dispatcher
     }
     
-    func countUP() {
-        dispatcher.dispatch(CountAction.plussButtonDidtap)
+    func countUP(count: Int) {
+        dispatcher.dispatch(CountAction.plussButtonDidtap(count + 1))
     }
     
-    func countDown() {
-        dispatcher.dispatch(CountAction.minusButtonDidtap)
+    func countDown(count: Int) {
+        dispatcher.dispatch(CountAction.minusButtonDidtap(count - 1))
     }
     
-    func fetchCount() {
-        dispatcher.dispatch(CountAction.fetchCount)
-    }
 }

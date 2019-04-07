@@ -11,15 +11,33 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var PlusButton: UIButton!
-    @IBOutlet weak var MinusButton: UIButton!
+    
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var PlusButton: UIButton!
+    @IBOutlet private weak var MinusButton: UIButton!
+    private let viewModel = CountViewModel()
     
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addrxObserber()
+    }
+    
+    private func addrxObserber() {
+        PlusButton.rx.tap
+            .bind(to: viewModel.plussButtonDidTap)
+            .disposed(by: disposeBag)
+        
+        MinusButton.rx.tap
+            .bind(to: viewModel.minusButtonDidTap)
+            .disposed(by: disposeBag)
+        
+        viewModel.count
+            .bind(onNext: { [weak self] count in
+                self?.label.text = String(count)
+            })
+            .disposed(by: disposeBag)
     }
 
 

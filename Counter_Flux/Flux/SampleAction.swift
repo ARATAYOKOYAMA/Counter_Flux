@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 enum CountAction: Action {
-    case plussButtonDidtap
-    case minusButtonDidtap
-    case fetchCount
+    case plussButtonDidtap(Int)
+    case minusButtonDidtap(Int)
 }
